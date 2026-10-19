@@ -1,0 +1,10 @@
+name: Sercret
+on: push
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    env:
+      PASSWORD: ${{ sercrets.SYSTEM_PASSWORD }}
+    steps:
+      - run: echo "${PASSWORD}"
+      - uses: actions/checkout@v4
